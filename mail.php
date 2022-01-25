@@ -21,11 +21,13 @@
         
     </table>';
 
-    if (@mail($to, $email, $message, $headers))
-    {
-        echo 'Your message has been sent.';
-    }else{
-        echo 'failed';
-    }
+  
+    $retval = mail ($to, $email, $message, $headers);
+         
+         if( $retval == true ) {
+            echo "Message sent successfully...";
+         }else {
+            echo "Message could not be sent...";
+         }
 
 ?>
